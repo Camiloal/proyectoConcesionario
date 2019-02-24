@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class Principal {
     
     public static void main(String[] args) {
-     Deportivo uno = new Deportivo();
+     Deportivo uno = new Deportivo() {
+     };
       
      Scanner op = new Scanner (System.in);
      int opcion;

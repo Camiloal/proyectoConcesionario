@@ -10,7 +10,7 @@ package com.mycompany.proyectoconcesionario;
  * @author CamiloAlvarez
  * @version 1.0
  */
-public abstract class Carro {
+public class Carro {
     /**
      * variable que indica la placa del carro
      */
@@ -82,7 +82,9 @@ public abstract class Carro {
      * @author CamiloAlvarez
      * @version 1.0
      */
-    public abstract void agregarCarro();
+    public void agregarCarro(){
+        
+    }
     /**
      * funcion que modifica un carro
      * @author CamiloAlvarez

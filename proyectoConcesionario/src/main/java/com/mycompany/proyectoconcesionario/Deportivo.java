@@ -5,7 +5,10 @@
  */
 package com.mycompany.proyectoconcesionario;
 
+import java.io.ObjectInputStream;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *clase hija especificar un tipo de carro
  * @author CamiloAlvarez
@@ -59,21 +62,12 @@ public class Deportivo extends Carro{
         turbo = S.next();
         System.out.println("ingresar seguridad:");
         seguridad = S.next();
-        Deportivo deportivo1 = new Deportivo(turbo,seguridad,getPlaca(),getMarca(),getColor(),getCilindraje(),
+        
+        nuevo[0] = new Deportivo(turbo,seguridad,getPlaca(),getMarca(),getColor(),getCilindraje(),
         getModelo(),getCombustible(),getCantidadLlantas(),getCantidadPuertas(),getPrecio());
-        
-         
-         
-        
-        
-   
+       
         
     }
 
-    
-
-   
-    
-    
-    
+ 
 }
