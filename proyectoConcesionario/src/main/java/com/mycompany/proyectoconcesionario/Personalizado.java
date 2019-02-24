@@ -8,34 +8,37 @@ package com.mycompany.proyectoconcesionario;
 import java.util.Scanner;
 
 /**
- * Clase hija maquinaria que hereda de la clase Carro 
- * @version 1.0
+ *
  * @author Hernan
  */
-public class Maquinaria extends Carro {
+public class Personalizado extends Carro{
     /**
-     *   Variable que indica la capacidad que sopota la maquinaria
+     *  variable que indica el tipo de rin que desea
      */
-    private String capacidad;
+    private String tipoRin;
     
     /**
-     *  variable que indica el tipo de llanta que debe utilizar la maquinaria 
+     *  variable que indica el tipo de luces que desea 
      */
-    private String tipoLlanta;
+    private String tipoLuz;
     
     /**
-     *  variable que guarda el arreglo
+     * variable que indica el tipo de sonido que desea 
      */
-    Maquinaria[] nuevo;
+    private String sonido;
+    Personalizado[]  nuevo;
     
-    public Maquinaria(){
-    nuevo = new Maquinaria[20];
+    
+    
+    public Personalizado(){
+    nuevo = new Personalizado[20];
     }
 
     /**
-     * Constructor de la clase hija Maquinaria 
-     * @param capacidad
-     * @param tipoLlanta
+     * Constructor que inicializa las variables 
+     * @param tipoRin
+     * @param tipoLuz
+     * @param sonido
      * @param placa
      * @param marca
      * @param color
@@ -46,17 +49,17 @@ public class Maquinaria extends Carro {
      * @param cantidadPuertas
      * @param precio 
      */
-    public Maquinaria(String capacidad, String tipoLlanta, int placa, String marca, String color, String cilindraje, String modelo, String combustible, int cantidadLlantas, int cantidadPuertas, double precio) {
+    public Personalizado(String tipoRin, String tipoLuz, String sonido, int placa, String marca, String color, String cilindraje, String modelo, String combustible, int cantidadLlantas, int cantidadPuertas, double precio) {
         super(placa, marca, color, cilindraje, modelo, combustible, cantidadLlantas, cantidadPuertas, precio);
-        this.capacidad = capacidad;
-        this.tipoLlanta = tipoLlanta;
-       
-    }
-    
+        this.tipoRin = tipoRin;
+        this.tipoLuz = tipoLuz;
+        this.sonido = sonido;
+       }
+
+
     @Override
     public void agregarCarro(){
-        
-        Scanner S = new Scanner(System.in);
+     Scanner S = new Scanner(System.in);
         System.out.println("ingrese placa:");
         setPlaca(S.nextInt());
         System.out.println("ingrese marca:");
@@ -75,14 +78,17 @@ public class Maquinaria extends Carro {
         setCantidadPuertas(S.nextInt());
         System.out.println("ingresar precio:");
         setPrecio(S.nextDouble());
-        System.out.println("ingresar la capacidad que soporta:");
-        capacidad = S.next();
-        System.out.println("ingresar el tipo de llanta :");
-        tipoLlanta = S.next();
+        System.out.println("ingresar el tipo de  sonido :");
+        sonido = S.next();
+        System.out.println("ingresar el tipo de luz:");
+        tipoLuz = S.next();
+        System.out.println("ingresar el tipo de rin :");
+        tipoRin = S.next();
         
-        nuevo[0] = new Maquinaria(capacidad,tipoLlanta,getPlaca(),getMarca(),getColor(),getCilindraje(),
+        nuevo[0]= new Personalizado (sonido,tipoLuz,tipoRin,getPlaca(),getMarca(),getColor(),getCilindraje(),
         getModelo(),getCombustible(),getCantidadLlantas(),getCantidadPuertas(),getPrecio());
-       
         
     }
-    }
+    
+    
+}
