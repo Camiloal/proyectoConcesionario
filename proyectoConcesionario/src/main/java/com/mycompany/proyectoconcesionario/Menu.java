@@ -70,7 +70,10 @@ public class Menu {
                            uno.verCarros();
                             break;
                          case 4:
-                           
+                             int placaEliminar;
+                             System.out.println("Ingrese la placa del carro a eliminar: ");
+                             placaEliminar = op.nextInt();
+                           uno.eliminarCarro(placaEliminar);
                             break;
                      }
                      

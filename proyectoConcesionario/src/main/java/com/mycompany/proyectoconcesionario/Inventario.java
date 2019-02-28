@@ -148,13 +148,49 @@ public class Inventario {
         try{
          for(Deportivo lista : listaDeportivo){
              
-         System.out.println("PLACA: "+lista.getPlaca()+" "+"MARCA: "+lista.getMarca()+" "+"COLOR: "+lista.getModelo()+" "+lista.getColor()
-         +" "+"PRECIO: "+lista.getPrecio()+" "+"CILINDRAJE: "+lista.getCilindraje());
+         System.out.println("PLACA: "+lista.getPlaca()+"  MARCA: "+lista.getMarca()+"  MODELO: "+lista.getModelo()+"  COLOR:  "+lista.getColor()
+         +"  PRECIO: "+lista.getPrecio()+"  CILINDRAJE: "+lista.getCilindraje()+"  Tipo: "+" Deportivo");
       
          }
         }catch(Exception e){
             
         }
      }
+    public void eliminarCarro(int placa){
+        
+        try{
+            for (Deportivo deportivo : listaDeportivo) {
+                
+                if(deportivo.getPlaca()==placa){
+                    listaDeportivo.remove(deportivo);
+                    System.err.println("Deportivo Eliminado");
+                }else{
+                    
+                    for(Maquinaria maquinaria : listaMaquinaria){
+                        
+                        if(maquinaria.getPlaca()==placa){
+                        listaMaquinaria.remove(maquinaria);
+                        System.err.println("Maquina Eliminada");
+
+                    }else{
+                            for(Personalizado personalizado: listaPersonalizado){
+                                if(personalizado.getPlaca()==placa){
+                                    listaPersonalizado.remove(personalizado);
+                                    System.err.println("Personalizado1 Eliminado");
+
+                                }else{
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }catch(Exception e){
+            
+        }
+        
+    }
 
 }
