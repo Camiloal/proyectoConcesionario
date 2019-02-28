@@ -5,10 +5,7 @@
  */
 package com.mycompany.proyectoconcesionario;
 
-import java.io.ObjectInputStream;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 /**
  *clase hija especificar un tipo de carro
  * @author CamiloAlvarez
@@ -24,10 +21,26 @@ public class Deportivo extends Carro{
      */
     private String seguridad;
 
-    Deportivo[] nuevo ;
+    /** 
+     * constructor vacio
+     */
     public Deportivo(){
-        nuevo = new Deportivo[20];
+        
     }
+    /**
+     * constructor que recibe los parametros minimos para ejecutar.......
+     * @param turbo indica el turbo del carro
+     * @param seguridad indica la seguridad del carro
+     * @param placa indica la placa del carro
+     * @param marca indica la marca del carro
+     * @param color indica el color del carro
+     * @param cilindraje indica el cilindraje del carro
+     * @param modelo indica el modelo del carro
+     * @param combustible indica el combustible del carro
+     * @param cantidadLlantas indica la cantidad de llantas
+     * @param cantidadPuertas indica la cantidad de puertas del carro
+     * @param precio indica el precio del carro
+     */
     public Deportivo(String turbo, String seguridad, int placa, String marca, String color, String cilindraje,
             String modelo, String combustible, int cantidadLlantas, int cantidadPuertas, double precio) {
         super(placa, marca, color, cilindraje, modelo, combustible, cantidadLlantas, cantidadPuertas, precio);
@@ -35,39 +48,28 @@ public class Deportivo extends Carro{
         this.seguridad = seguridad;
     }
 
- 
-    @Override
-    public void agregarCarro() {
-        
-        Scanner S = new Scanner(System.in);
-        System.out.println("ingrese placa:");
-        setPlaca(S.nextInt());
-        System.out.println("ingrese marca:");
-        setMarca(S.next());
-        System.out.println("ingrese color:");
-        setColor(S.next());
-        System.out.println("ingresar cilindraje:");
-        setCilindraje(S.next());
-        System.out.println("ingresar modelo:");
-        setModelo(S.next());
-        System.out.println("ingresar combustible:");
-        setCombustible(S.next());
-        System.out.println("ingresar cantidad de llantas:");
-        setCantidadLlantas(S.nextInt());
-        System.out.println("ingresar cantidad de puertas:");
-        setCantidadPuertas(S.nextInt());
-        System.out.println("ingresar precio:");
-        setPrecio(S.nextDouble());
-        System.out.println("ingresar turbo:");
-        turbo = S.next();
-        System.out.println("ingresar seguridad:");
-        seguridad = S.next();
-        
-        nuevo[0] = new Deportivo(turbo,seguridad,getPlaca(),getMarca(),getColor(),getCilindraje(),
-        getModelo(),getCombustible(),getCantidadLlantas(),getCantidadPuertas(),getPrecio());
-       
-        
+    
+
+    public String getTurbo() {
+        return turbo;
     }
 
- 
+    public void setTurbo(String turbo) {
+        this.turbo = turbo;
+    }
+
+    public String getSeguridad() {
+        return seguridad;
+    }
+
+    public void setSeguridad(String seguridad) {
+        this.seguridad = seguridad;
+    }
+
+    
+
+   
+    
+    
+    
 }

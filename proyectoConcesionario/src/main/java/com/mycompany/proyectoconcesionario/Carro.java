@@ -10,7 +10,7 @@ package com.mycompany.proyectoconcesionario;
  * @author CamiloAlvarez
  * @version 1.0
  */
-public class Carro {
+public  abstract class Carro {
     /**
      * variable que indica la placa del carro
      */
@@ -77,39 +77,7 @@ public class Carro {
         this.precio = precio;
     }
     
-    /**
-     * funcion que agrega un carro
-     * @author CamiloAlvarez
-     * @version 1.0
-     */
-    public void agregarCarro(){
-        
-    }
-    /**
-     * funcion que modifica un carro
-     * @author CamiloAlvarez
-     * @version 1.0
-     */
-    public void modificarCarro(){
-        
-    }
-    /**
-     * funcion que muestra los carros
-     * @author CamiloAlvarez
-     * @version 1.0
-     */
-    public void verCarro(){
-        
-    }
-    /**
-     * funcion que elimina un carro
-     * @author CamiloAlvarez
-     * @version 1.0
-     */
-    public void eliminarCarro(){
-        
-    }
-
+   
     public int getPlaca() {
         return placa;
     }
