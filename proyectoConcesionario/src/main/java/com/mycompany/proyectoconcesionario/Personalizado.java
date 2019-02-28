@@ -56,6 +56,40 @@ public class Personalizado extends Carro{
         this.sonido = sonido;
        }
 
+    public String getTipoRin() {
+        return tipoRin;
+    }
+
+    public void setTipoRin(String tipoRin) {
+        this.tipoRin = tipoRin;
+    }
+
+    public String getTipoLuz() {
+        return tipoLuz;
+    }
+
+    public void setTipoLuz(String tipoLuz) {
+        this.tipoLuz = tipoLuz;
+    }
+
+    public String getSonido() {
+        return sonido;
+    }
+
+    public void setSonido(String sonido) {
+        this.sonido = sonido;
+    }
+
+    public Personalizado[] getNuevo() {
+        return nuevo;
+    }
+
+    public void setNuevo(Personalizado[] nuevo) {
+        this.nuevo = nuevo;
+    }
+
+    
+    
 
   
     

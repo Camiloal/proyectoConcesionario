@@ -52,6 +52,30 @@ public class Maquinaria extends Carro {
         this.tipoLlanta = tipoLlanta;
        
     }
+
+    public String getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public String getTipoLlanta() {
+        return tipoLlanta;
+    }
+
+    public void setTipoLlanta(String tipoLlanta) {
+        this.tipoLlanta = tipoLlanta;
+    }
+
+    public Maquinaria[] getNuevo() {
+        return nuevo;
+    }
+
+    public void setNuevo(Maquinaria[] nuevo) {
+        this.nuevo = nuevo;
+    }
     
    
     }
