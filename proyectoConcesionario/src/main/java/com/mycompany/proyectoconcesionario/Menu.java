@@ -70,7 +70,7 @@ public class Menu {
                            uno.verCarros();
                             break;
                          case 4:
-                           uno.eliminarCarros();
+                           
                             break;
                      }
                      

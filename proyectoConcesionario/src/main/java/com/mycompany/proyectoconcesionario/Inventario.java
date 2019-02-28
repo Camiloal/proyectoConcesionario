@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyectoconcesionario;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,12 +17,18 @@ import java.util.Scanner;
 public class Inventario {
 
     /**
-     * arreglo que contiene un odjeto de la clase Deportivo
+     * lista creada para guardar los datos de la clase Deportivo
      */
-    Deportivo[] lista = new Deportivo[20];
+    private List<Deportivo> listaDeportivo = new ArrayList<>();
     /**
-     * constructos vacio
+     * lista creada para guardar los datos de la clase Maquinaria
      */
+    private List<Maquinaria> listaMaquinaria = new ArrayList<>();
+    /**
+     * lista creada para guardar los datos de la clase Personalizado
+     */
+    private List<Personalizado> listaPersonalizado = new ArrayList<>();
+ 
     public Inventario() {
     
     }
@@ -37,19 +45,15 @@ public class Inventario {
      * @version 1.0
      * @param id indica que tipo de carro se va agregar
      */
+    
+    String Turbo;
+    String Seguridad;
      public void agregarCarro(int id) {
          
          
          String continuar = null;
-         int pocicion=0;
-         try{
-         for(pocicion=0;pocicion<lista.length;pocicion++){             
-           lista[pocicion].getColor();
-           
-         }
-         }catch(Exception e){
-             
-         }
+       
+       
           try{
               
         System.out.println("ingrese placa:");
@@ -72,21 +76,19 @@ public class Inventario {
         double Precio=S.nextDouble();
         if (id == 1){
         System.out.println("ingresar turbo:");
-        String Turbo=S.next();
+        Turbo=S.next();
         System.out.println("ingresar seguridad:");
-        String Seguridad=S.next();
+        Seguridad=S.next();
         
-        lista[pocicion] = new Deportivo(Turbo,Seguridad,Placa,Marca,Color,Cilindraje,
+        Deportivo nuevo = new Deportivo(Turbo,Seguridad,Placa,Marca,Color,Cilindraje,
         Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
+        
+        listaDeportivo.add(nuevo);
         
         System.out.println("Agregar otro s/n:");
         continuar=S.next();
+        }
         
-         
-        
-        
-        
-        for(int i=1;i<lista.length;i++){
         
             if("s".equals(continuar)){
                      
@@ -115,28 +117,24 @@ public class Inventario {
         System.out.println("ingresar seguridad:");
         Seguridad=S.next();
         
-        lista[i] = new Deportivo(Turbo,Seguridad,Placa,Marca,Color,Cilindraje,
+        Deportivo nuevo1 = new Deportivo(Turbo,Seguridad,Placa,Marca,Color,Cilindraje,
         Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
-        System.out.println("Quieres ingresar otro Carro S/N::");
+         listaDeportivo.add(nuevo1);
+        System.out.println("Agregar otro s/n:");
         continuar = S.next();
          
         
             }
         
         
-         }else{
-                
-                    break;
-                
+         }
             
-        }
-            }
-        }  
-         }catch(Exception e){
+        }  catch(Exception e){
              
            System.out.println("Dato incorrecto");
+         }
     }
-}
+
        
      
       /**
@@ -148,35 +146,15 @@ public class Inventario {
          
         
         try{
-         for(int i=0;i<lista.length;i++){
+         for(Deportivo lista : listaDeportivo){
              
-         System.out.println("PLACA: "+lista[i].getPlaca()+" "+"MARCA: "+lista[i].getMarca()+" "+"COLOR: "+lista[i].getModelo()+" "+lista[i].getColor()
-         +" "+"PRECIO: "+lista[i].getPrecio()+" "+"CILINDRAJE: "+lista[i].getCilindraje());
+         System.out.println("PLACA: "+lista.getPlaca()+" "+"MARCA: "+lista.getMarca()+" "+"COLOR: "+lista.getModelo()+" "+lista.getColor()
+         +" "+"PRECIO: "+lista.getPrecio()+" "+"CILINDRAJE: "+lista.getCilindraje());
       
          }
         }catch(Exception e){
             
         }
      }
-    
-    public void eliminarCarros(){
-        
-        int eliminarPlaca;
-        
-        System.out.println("ingresa la placa del carro que vas a eliminar");
-        eliminarPlaca = S.nextInt();
-        
-        try{
-           for(int i=0;i<lista.length;i++){
-           if(lista[i].getPlaca()==eliminarPlaca){
-               lista[i]=null;
-               System.out.println("Carro Eliminado");
-               i=21;
-           }
-           
-           }
-        }catch(Exception e){
-            
-        }
-    }
+
 }
