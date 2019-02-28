@@ -57,38 +57,7 @@ public class Personalizado extends Carro{
        }
 
 
-    @Override
-    public void agregarCarro(){
-     Scanner S = new Scanner(System.in);
-        System.out.println("ingrese placa:");
-        setPlaca(S.nextInt());
-        System.out.println("ingrese marca:");
-        setMarca(S.next());
-        System.out.println("ingrese color:");
-        setColor(S.next());
-        System.out.println("ingresar cilindraje:");
-        setCilindraje(S.next());
-        System.out.println("ingresar modelo:");
-        setModelo(S.next());
-        System.out.println("ingresar combustible:");
-        setCombustible(S.next());
-        System.out.println("ingresar cantidad de llantas:");
-        setCantidadLlantas(S.nextInt());
-        System.out.println("ingresar cantidad de puertas:");
-        setCantidadPuertas(S.nextInt());
-        System.out.println("ingresar precio:");
-        setPrecio(S.nextDouble());
-        System.out.println("ingresar el tipo de  sonido :");
-        sonido = S.next();
-        System.out.println("ingresar el tipo de luz:");
-        tipoLuz = S.next();
-        System.out.println("ingresar el tipo de rin :");
-        tipoRin = S.next();
-        
-        nuevo[0]= new Personalizado (sonido,tipoLuz,tipoRin,getPlaca(),getMarca(),getColor(),getCilindraje(),
-        getModelo(),getCombustible(),getCantidadLlantas(),getCantidadPuertas(),getPrecio());
-        
-    }
+  
     
     
 }

@@ -53,36 +53,5 @@ public class Maquinaria extends Carro {
        
     }
     
-    @Override
-    public void agregarCarro(){
-        
-        Scanner S = new Scanner(System.in);
-        System.out.println("ingrese placa:");
-        setPlaca(S.nextInt());
-        System.out.println("ingrese marca:");
-        setMarca(S.next());
-        System.out.println("ingrese color:");
-        setColor(S.next());
-        System.out.println("ingresar cilindraje:");
-        setCilindraje(S.next());
-        System.out.println("ingresar modelo:");
-        setModelo(S.next());
-        System.out.println("ingresar combustible:");
-        setCombustible(S.next());
-        System.out.println("ingresar cantidad de llantas:");
-        setCantidadLlantas(S.nextInt());
-        System.out.println("ingresar cantidad de puertas:");
-        setCantidadPuertas(S.nextInt());
-        System.out.println("ingresar precio:");
-        setPrecio(S.nextDouble());
-        System.out.println("ingresar la capacidad que soporta:");
-        capacidad = S.next();
-        System.out.println("ingresar el tipo de llanta :");
-        tipoLlanta = S.next();
-        
-        nuevo[0] = new Maquinaria(capacidad,tipoLlanta,getPlaca(),getMarca(),getColor(),getCilindraje(),
-        getModelo(),getCombustible(),getCantidadLlantas(),getCantidadPuertas(),getPrecio());
-       
-        
-    }
+   
     }
