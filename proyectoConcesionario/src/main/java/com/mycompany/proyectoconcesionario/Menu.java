@@ -97,14 +97,14 @@ public class Menu {
                             break;
                          case 5:
                                 do {
-                                 System.out.println("Que Tipo de Carro Quieres Agregar..");
+                                 System.out.println("Que Tipo de persona Quieres Agregar..");
                                  System.out.println("1.Cliente");
                                  System.out.println("2.Empleado");
                                  System.out.println("3.salir");
                                  System.out.println("ingrese opcion");
                                  opcion = op.nextInt();
                                  gente.agregarPersona(opcion);
-                                }while (opcion <4);
+                                }while (opcion != 4);
                                 break;
                                 
                          case 6:
