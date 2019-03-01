@@ -210,7 +210,10 @@ public class Inventario {
 }
           
     }
-       
+     /**
+      * Funcion que sirve para modificar los atributos de cualquier carro
+      * @param placaM variabe por la que se identifica el carro 
+      */  
      public void modificarCarros(int placaM){
         String marcaN;
         String colorN;
@@ -253,7 +256,7 @@ public class Inventario {
                        listadeportivo.setModelo(modeloN);
                        listadeportivo.setCombustible(combustibleN);
                        listadeportivo.setCantidadLlantas(cantidadLlantasN);
-                       listadeportivo.setCantidadLlantas(cantidadPuertasN);
+                       listadeportivo.setCantidadPuertas(cantidadPuertasN);
                        listadeportivo.setPrecio(precioN);
                        listadeportivo.setTurbo(turboN);
                        listadeportivo.setSeguridad(seguridadN);

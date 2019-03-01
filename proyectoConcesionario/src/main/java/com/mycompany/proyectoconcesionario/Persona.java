@@ -20,26 +20,26 @@ public class Persona {
      */
     private String apellido;
     /**
-     *  variable que indica el telefono de la persona
+     *  variable que indica la cedula de la persona
      */
-    private double telefono;
+    private double cedula;
     /**
      *  variable que indica la direccion de la persona
      */
-    private String direccional;
+    private String direccion;
 
     /**
      * Contructor de la clase padre 
      * @param nombre
      * @param apellido
-     * @param telefono
-     * @param direccional 
+     * @param cedula
+     * @param direccion
      */
-    public Persona(String nombre, String apellido, double telefono, String direccional) {
+    public Persona(String nombre, String apellido, double cedula, String direccion) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.telefono = telefono;
-        this.direccional = direccional;
+        this.cedula = cedula;
+        this.direccion = direccion;
         
         
     }
@@ -76,29 +76,29 @@ public class Persona {
      * metodo para volver la variable publica
      * @return 
      */
-    public double getTelefono() {
-        return telefono;
+    public double getCedula() {
+        return cedula;
     }
     /**
      * metodo para volver la variable publica
      * @return 
      */
-    public void setTelefono(double telefono) {
-        this.telefono = telefono;
+    public void setCedula(double cedula) {
+        this.cedula = cedula;
     }
     /**
      * metodo para volver la variable publica
      * @return 
      */
-    public String getDireccional() {
-        return direccional;
+    public String getDireccion() {
+        return direccion;
     }
     /**
      * metodo para volver la variable publica
      * @return 
      */
-    public void setDireccional(String direccional) {
-        this.direccional = direccional;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
     

@@ -6,7 +6,8 @@
 package com.mycompany.proyectoconcesionario;
 
 /**
- *
+ *clase que hereda atributos de la clase persona
+ * @version 1.0
  * @author Hernan
  */
 public class Cliente extends Persona {
@@ -32,11 +33,11 @@ public class Cliente extends Persona {
     * @param clave
     * @param nombre
     * @param apellido
-    * @param telefono
+    * @param cedula
     * @param direccional 
     */
-    public Cliente(int dineroDisponible, String usuario, String clave, String nombre, String apellido, double telefono, String direccional) {
-        super(nombre, apellido, telefono, direccional);
+    public Cliente(int dineroDisponible, String usuario, String clave, String nombre, String apellido, double cedula, String direccional) {
+        super(nombre, apellido, cedula, direccional);
         this.dineroDisponible = dineroDisponible;
         this.usuario = usuario;
         this.clave = clave;

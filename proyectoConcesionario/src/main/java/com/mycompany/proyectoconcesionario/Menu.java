@@ -8,8 +8,10 @@ package com.mycompany.proyectoconcesionario;
 import java.util.Scanner;
 
 /**
- *
+ *clase que sirve como menu de la aplicacion
  * @author CamiloAlvarez
+ * @version 1.0
+ * 
  */
 public class Menu {
 
@@ -18,8 +20,9 @@ public class Menu {
     
     
     public void mostrarMenu(){
-        
-        /**
+       
+     PersonalTotal gente = new PersonalTotal(){};
+     /**
      * objeto que trae los metodos de inventario
      */
         Inventario uno = new Inventario() {};
@@ -90,8 +93,35 @@ public class Menu {
                              int placaEliminar;
                              System.out.println("Ingrese la placa del carro a eliminar: ");
                              placaEliminar = op.nextInt();
-                           uno.eliminarCarro(placaEliminar);
+                             uno.eliminarCarro(placaEliminar);
                             break;
+                         case 5:
+                                do {
+                                 System.out.println("Que Tipo de Carro Quieres Agregar..");
+                                 System.out.println("1.Cliente");
+                                 System.out.println("2.Empleado");
+                                 System.out.println("3.salir");
+                                 System.out.println("ingrese opcion");
+                                 opcion = op.nextInt();
+                                 gente.agregarPersona(opcion);
+                                }while (opcion <4);
+                                break;
+                                
+                         case 6:
+                             int cedulaModificar = 0;
+                             System.out.println("ingrese la cedula de la persona que va modificar");
+                             cedulaModificar = op.nextInt();
+                             gente.modificarPersona(cedulaModificar);
+                         case 7:
+                             gente.mostrarPersonas();
+                             break;
+                         case 8:
+                             int cedulaEliminar;
+                             System.out.println("Ingrese la cedula de la persona a  eliminar: ");
+                             cedulaEliminar = op.nextInt();
+                             gente.eliminarPersona(cedulaEliminar);
+                            break;
+                             
                      }
                      
                  }while (opcion!=12);

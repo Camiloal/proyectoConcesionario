@@ -6,8 +6,9 @@
 package com.mycompany.proyectoconcesionario;
 
 /**
- *
+ *clase que hereada atributos de la clase persona
  * @author Hernan
+ * @version 1.0
  */
 public class Empleado extends Persona{
     /**
@@ -30,11 +31,11 @@ public class Empleado extends Persona{
      * @param eps
      * @param nombre
      * @param apellido
-     * @param telefono
+     * @param cedula
      * @param direccional 
      */
-    public Empleado(double salario, String experienciaLaboral, String eps, String nombre, String apellido, double telefono, String direccional) {
-        super(nombre, apellido, telefono, direccional);
+    public Empleado(double salario, String experienciaLaboral, String eps, String nombre, String apellido, double cedula, String direccional) {
+        super(nombre, apellido, cedula, direccional);
         this.salario = salario;
         this.experienciaLaboral = experienciaLaboral;
         this.eps = eps;
