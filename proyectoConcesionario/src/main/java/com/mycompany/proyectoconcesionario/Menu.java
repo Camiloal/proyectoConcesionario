@@ -63,9 +63,26 @@ public class Menu {
                      
                      switch(opcion){
                          case 1:
-                             uno.agregarCarro(opcion);
+                             do{
+                                 System.out.println("Que Tipo de Carro Quieres Agregar..");
+                                 System.out.println("1.Deportivo");
+                                 System.out.println("2.Perzanalizado");
+                                 System.out.println("3.Maquinaria");
+                                 System.out.println("4.Estandar");
+                                 System.out.println("5.Salir");
+                                 System.out.println("ingrese opcion:");
+                                 opcion = op.nextInt();
+                                uno.agregarCarro(opcion); 
+                             }while(opcion<5);
+                             
+                             
                          
                              break;
+                         case 2:
+                             int placaModificar = 0;
+                             System.out.println("ingrese la placa del carro que va modificar");
+                             placaModificar = op.nextInt();
+                             uno.modificarCarros(placaModificar);
                          case 3:
                            uno.verCarros();
                             break;
