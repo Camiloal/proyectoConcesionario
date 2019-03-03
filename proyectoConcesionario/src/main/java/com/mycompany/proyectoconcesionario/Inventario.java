@@ -28,7 +28,14 @@ public class Inventario {
      * lista creada para guardar los datos de la clase Personalizado
      */
     private List<Personalizado> listaPersonalizado = new ArrayList<>();
- 
+    /**
+     * lista creada para guardar los datos de la clase Estandar
+     */
+    private List<Estandar> listaEstandar = new ArrayList<>();
+    
+    /**
+     * constructor vacio
+     */
     public Inventario() {
     
     }
@@ -116,10 +123,21 @@ public class Inventario {
                 Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
                 
                 listaMaquinaria.add(nuevoM);
-            }
+            }else{
+                if(id==4){
+                    System.out.println("ingrese es QP 1.si / 2.no");
+                    int tipo = S.nextInt();
+                    
+                    Estandar nuevoE = new Estandar(tipo,Placa,Marca,Color,Cilindraje,
+                    Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
+                    
+                    listaEstandar.add(nuevoE); 
+                }
             
             }
+            }
         }
+        
         
         System.out.println("Agregar otro s/n:");
         continuar=S.next();
@@ -128,12 +146,6 @@ public class Inventario {
         
             if("s".equals(continuar)){
                      
-          if (id == 1){
-        System.out.println("ingresar turbo:");
-        Turbo=S.next();
-        System.out.println("ingresar seguridad:");
-        Seguridad=S.next();
-        }
                 
         System.out.println("ingrese placa:");
         Placa=S.nextInt();
@@ -188,6 +200,17 @@ public class Inventario {
                 Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
                 
                 listaMaquinaria.add(nuevoM);
+            }else{
+                if(id==4){
+                    System.out.println("ingrese es QP 1.si / 2.no");
+                    int tipo = S.nextInt();
+                    
+                    Estandar nuevoE = new Estandar(tipo,Placa,Marca,Color,Cilindraje,
+                    Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
+                    
+                    listaEstandar.add(nuevoE); 
+                }
+                
             }
            
             
@@ -196,20 +219,22 @@ public class Inventario {
          
         
             
-        
+          System.out.println("Agregar otro s/n:");
+          continuar=S.next();
         
          }
-             System.out.println("Agregar otro s/n:");
-             continuar=S.next();
             
-        }  
+            
+        }
              
            
-         }catch(Exception e){
-             System.out.println("Dato incorrecto");
-}
+         
+
           
-    }
+    }catch(Exception e){
+             System.out.println("Dato incorrecto");
+     }
+          }
      /**
       * Funcion que sirve para modificar los atributos de cualquier carro
       * @param placaM variabe por la que se identifica el carro 
@@ -221,9 +246,9 @@ public class Inventario {
         String modeloN;
         String combustibleN;
         int cantidadLlantasN;
-         int cantidadPuertasN;
-         double precioN;
-        for(Deportivo listadeportivo : listaDeportivo)
+        int cantidadPuertasN;
+        double precioN;
+        for(Deportivo listadeportivo : listaDeportivo){
             if (listadeportivo.getPlaca()== placaM){
    
                         System.out.println("ingrese marca:");
@@ -264,8 +289,9 @@ public class Inventario {
                        
                        
             }
-            else{
-            for(Maquinaria listamaquina : listaMaquinaria)
+        }
+            
+            for(Maquinaria listamaquina : listaMaquinaria){
                 if (listamaquina.getPlaca()== placaM){
                     
                         System.out.println("ingrese marca:");
@@ -301,8 +327,9 @@ public class Inventario {
                         
                         
                 }
-                else{
-                    for(Personalizado listaPersonalizado:listaPersonalizado)
+            }
+                
+                    for(Personalizado listaPersonalizado:listaPersonalizado){
                     if (listaPersonalizado.getPlaca()== placaM){
                         
                         System.out.println("ingrese marca:");
@@ -346,10 +373,11 @@ public class Inventario {
                      
                     } 
                     }
-                }        
+     }
+                       
         
            
-            }
+            
      
       /**
      * funcion que muestra los carros registrados
@@ -374,6 +402,13 @@ public class Inventario {
                  System.out.println("PLACA: "+listaP.getPlaca()+"  MARCA: "+listaP.getMarca()+"  MODELO: "+listaP.getModelo()+"  COLOR:  "+listaP.getColor()
          +"  PRECIO: "+listaP.getPrecio()+"  CILINDRAJE: "+listaP.getCilindraje()+"  Tipo: "+" Personalizado");
              }
+             for(Estandar listaE : listaEstandar){
+              System.out.println("PLACA: "+listaE.getPlaca()+"  MARCA: "+listaE.getMarca()+"  MODELO: "+listaE.getModelo()+"  COLOR:  "+listaE.getColor()
+         +"  PRECIO: "+listaE.getPrecio()+"  CILINDRAJE: "+listaE.getCilindraje()+"  Tipo: "+" Estandar");
+             }    
+                 
+                 
+             
          
          
          
@@ -425,12 +460,136 @@ public class Inventario {
                 }
             }catch(Exception e){
     }
-        
+    }
+    
+   
+    
+    public void carroMasyMenosCaro(int opcion){
+         double mas=0;
+         double menos=10;
+        Carro remplazo = new Deportivo(); 
+              remplazo = new Personalizado();
+              remplazo = new Maquinaria();
+              remplazo= new Estandar();
+              
+        try{
+            
+            if(opcion==9){
+                for (Deportivo deportivo : listaDeportivo) {
+                
+                    if(deportivo.getPrecio()>= mas){
+                       mas=deportivo.getPrecio();
+                       remplazo=deportivo;
+                    }
+                }
+                    
+                for(Maquinaria maquinaria : listaMaquinaria){
+                        
+                    if(maquinaria.getPrecio()>= mas){
+                       mas=maquinaria.getPrecio();
+                       remplazo=maquinaria;
+                    }
+
+                }
+                for(Personalizado personalizado: listaPersonalizado){
+                    if(personalizado.getPrecio()>= mas){
+                       mas=personalizado.getPrecio();
+                       remplazo=personalizado;
+                    }
+                    
+                }
+                for(Estandar estandar: listaEstandar){
+                    if(estandar.getPrecio()>=mas){
+                       mas=estandar.getPrecio();
+                        remplazo =estandar;
+                    }
+                                  
+                }
+                                
+                System.out.println("El carro mas caro es:  Marca: "+remplazo.getMarca()+" Color: "+remplazo.getColor()+" Tipo:  Deportivo  Precio: "+remplazo.getPrecio());
+            }else{
+                for (Deportivo deportivo : listaDeportivo) {
+                    if(deportivo.getPrecio()<= menos){
+                        menos=deportivo.getPrecio();
+                        remplazo=deportivo;
+                    }
+                }
+                    
+                for(Maquinaria maquinaria : listaMaquinaria){
+                    if(maquinaria.getPrecio()<= menos){
+                        remplazo=maquinaria;
+                        menos=maquinaria.getPrecio();
+                    }
+                }
+                
+                for(Personalizado personalizado: listaPersonalizado){
+ 
+                    if(personalizado.getPrecio()<= menos){                      
+                        menos=personalizado.getPrecio();
+                        remplazo=personalizado;
+                    }           
+                }
+                for(Estandar estandar: listaEstandar){
+                    if(estandar.getPrecio()<=menos){
+                       menos=estandar.getPrecio();
+                       remplazo =estandar;
+                    }
+                }
+                                
+                System.out.println("El carro mas barato es:  Marca: "+remplazo.getMarca()+" Color: "+remplazo.getColor()+" Tipo:  Deportivo  Precio: "+remplazo.getPrecio());
+                                   
+                                }
+                            }catch(Exception e){
+            }
+    }
+    
+
+    public List<Deportivo> getListaDeportivo() {
+        return listaDeportivo;
+    }
+
+    public void setListaDeportivo(List<Deportivo> listaDeportivo) {
+        this.listaDeportivo = listaDeportivo;
+    }
+
+    public List<Maquinaria> getListaMaquinaria() {
+        return listaMaquinaria;
+    }
+
+    public void setListaMaquinaria(List<Maquinaria> listaMaquinaria) {
+        this.listaMaquinaria = listaMaquinaria;
+    }
+
+    public List<Personalizado> getListaPersonalizado() {
+        return listaPersonalizado;
+    }
+
+    public void setListaPersonalizado(List<Personalizado> listaPersonalizado) {
+        this.listaPersonalizado = listaPersonalizado;
+    }
+
+    public List<Estandar> getListaEstandar() {
+        return listaEstandar;
+    }
+
+    public void setListaEstandar(List<Estandar> listaEstandar) {
+        this.listaEstandar = listaEstandar;
+    }
+
+    public Scanner getS() {
+        return S;
+    }
+
+    public void setS(Scanner S) {
+        this.S = S;
+    }
+     
+    
 }
 
-            
+    
        
         
     
 
-}
+

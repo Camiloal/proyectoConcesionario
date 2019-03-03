@@ -96,15 +96,7 @@ public class PersonalTotal {
         continuar=S.next();
         
          if("s".equals(continuar)){
-        
-        if (id == 1){
-        System.out.println("ingresar dinero disponible:");
-        dineroDisponible=S.nextInt();
-        System.out.println("ingresar usuario:");
-        usuario=S.next();
-        System.out.println("ingresar cleve:");
-        clave=S.next();
-        }
+       
          System.out.println("ingrese nombre:");
         Nombre=S.next();
         System.out.println("ingrese apellido:");
@@ -129,7 +121,7 @@ public class PersonalTotal {
         }else{
            if(id == 2){
                 System.out.println("ingrese salario:");
-                salario = S.nextDouble();
+                salario = 0.0;
                 System.out.println("ingrese experiencia laboral:");
                 experienciaLaboral = S.next();
                 System.out.println("ingrese eps del empleado:");
@@ -143,9 +135,10 @@ public class PersonalTotal {
                 }
         
             }
+          System.out.println("Agregar otro s/n:");
+          continuar=S.next();
         }
-         System.out.println("Agregar otro s/n:");
-         continuar=S.next();
+       
         }
         }catch(Exception e){
              System.out.println("Dato incorrecto");
@@ -160,7 +153,7 @@ public class PersonalTotal {
       */
        public void modificarPersona(int cedulaM){ 
        
-           for(Cliente listaclientes : listacCliente)
+           for(Cliente listaclientes : listacCliente){
             if (listaclientes.getCedula()== cedulaM){
 
                 System.out.println("ingresar dinero disponible:");
@@ -186,10 +179,11 @@ public class PersonalTotal {
                 listaclientes.setDireccion(DireccionN);
                 
                 
-                
+            }
             
-            }else{
-             for(Empleado listaempleado : listaEmpleado)
+            }
+       
+             for(Empleado listaempleado : listaEmpleado){
             if (listaempleado.getCedula()== cedulaM){
                 System.out.println("ingrese salario:");
                 Double salarioN = S.nextDouble();

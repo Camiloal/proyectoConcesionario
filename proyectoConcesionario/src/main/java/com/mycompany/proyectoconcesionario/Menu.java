@@ -53,14 +53,19 @@ public class Menu {
                      System.out.println("2.modificar carro");
                      System.out.println("3.ver carros");
                      System.out.println("4.eliminar carro");
+                     System.out.println("--------------------------");
                      System.out.println("5.agregar persona");
                      System.out.println("6.modificar persona");
-                     System.out.println("7.eliminar persona");
-                     System.out.println("8.ver carro mas caro");
-                     System.out.println("9.ver carro menos caro");
-                     System.out.println("10.ver carro mas vendido");
-                     System.out.println("11.ver carro menos vendido");
-                     System.out.println("12.salir");
+                     System.out.println("7.ver persona");
+                     System.out.println("8.eliminar persona");
+                     System.out.println("---------------------------");
+                     System.out.println("9.ver carro mas caro");
+                     System.out.println("10.ver carro menos caro");
+                     System.out.println("---------------------------");
+                     System.out.println("11.ver carro mas vendido");
+                     System.out.println("12.ver carro menos vendido");
+                     System.out.println("---------------------------");
+                     System.out.println("13.salir");
                      System.out.println("ingrese opcion:");
                      opcion = op.nextInt();
                      
@@ -104,7 +109,7 @@ public class Menu {
                                  System.out.println("ingrese opcion");
                                  opcion = op.nextInt();
                                  gente.agregarPersona(opcion);
-                                }while (opcion != 4);
+                                }while (opcion != 3);
                                 break;
                                 
                          case 6:
@@ -121,10 +126,17 @@ public class Menu {
                              cedulaEliminar = op.nextInt();
                              gente.eliminarPersona(cedulaEliminar);
                             break;
+                            
+                         case 9:
+                             uno.carroMasyMenosCaro(opcion);
+                             
+                             break;
+                         case 10:
+                             uno.carroMasyMenosCaro(opcion);
                              
                      }
                      
-                 }while (opcion!=12);
+                 }while (opcion!=13);
              
                  break;
          }
