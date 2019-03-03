@@ -26,6 +26,10 @@ public class Cliente extends Persona {
     */
    private String clave;
 
+    public Cliente() {
+    }
+
+   
    /**
     * Constructor para inicializar las variables 
     * @param dineroDisponible

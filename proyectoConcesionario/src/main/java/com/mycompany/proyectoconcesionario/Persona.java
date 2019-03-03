@@ -28,6 +28,10 @@ public class Persona {
      */
     private String direccion;
 
+    public Persona() {
+    }
+
+    
     /**
      * Contructor de la clase padre 
      * @param nombre

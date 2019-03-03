@@ -45,13 +45,13 @@ public class PersonalTotal {
          String clave;
          
          
-         String continuar = null;
+         String continuar = "s";
          
          
          try{
          
         if(id<3){
-            
+            while(continuar.equals("s")){
         System.out.println("ingrese nombre:");
         String Nombre=S.next();
         System.out.println("ingrese apellido:");
@@ -94,56 +94,14 @@ public class PersonalTotal {
         
         System.out.println("Agregar otro s/n:");
         continuar=S.next();
-        
-         if("s".equals(continuar)){
-       
-         System.out.println("ingrese nombre:");
-        Nombre=S.next();
-        System.out.println("ingrese apellido:");
-        Apellido=S.next();
-        System.out.println("ingrese telefono:");
-        Cedula=S.nextDouble();
-        System.out.println("ingresar direccion:");
-        Direccion=S.next();
-        
-        if (id == 1){
-        System.out.println("ingresar dinero disponible:");
-        dineroDisponible=S.nextInt();
-        System.out.println("ingresar usuario:");
-        usuario=S.next();
-        System.out.println("ingresar cleve:");
-        clave=S.next();
 
-        Cliente nuevo = new Cliente(dineroDisponible,usuario,clave,Nombre,Apellido,Cedula,
-        Direccion);
-
-        listacCliente.add(nuevo);
-        }else{
-           if(id == 2){
-                System.out.println("ingrese salario:");
-                salario = 0.0;
-                System.out.println("ingrese experiencia laboral:");
-                experienciaLaboral = S.next();
-                System.out.println("ingrese eps del empleado:");
-                eps = S.next();
-               
-                
-                Empleado nuevoE = new Empleado(salario,experienciaLaboral,Nombre,Apellido,eps,Cedula,
-                Direccion);
-                
-                listaEmpleado.add(nuevoE);
-                }
-        
-            }
-          System.out.println("Agregar otro s/n:");
-          continuar=S.next();
         }
-       
         }
         }catch(Exception e){
              System.out.println("Dato incorrecto");
+        }
         }       
-    }
+    
      
      
      /**
@@ -265,6 +223,30 @@ public class PersonalTotal {
         }
         
         }
+
+    public List<Empleado> getListaEmpleado() {
+        return listaEmpleado;
+    }
+
+    public void setListaEmpleado(List<Empleado> listaEmpleado) {
+        this.listaEmpleado = listaEmpleado;
+    }
+
+    public List<Cliente> getListacCliente() {
+        return listacCliente;
+    }
+
+    public void setListacCliente(List<Cliente> listacCliente) {
+        this.listacCliente = listacCliente;
+    }
+
+    public Scanner getS() {
+        return S;
+    }
+
+    public void setS(Scanner S) {
+        this.S = S;
+    }
        
        
      

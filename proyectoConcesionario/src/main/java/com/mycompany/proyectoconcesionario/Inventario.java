@@ -63,12 +63,13 @@ public class Inventario {
          String tipoLuces;
          String sonido;
          
-         String continuar = null;
+         String continuar = "s";
        
        
           try{
             
         if(id<5){
+            while(continuar.equals("s")){
         System.out.println("ingrese placa:");
         int Placa=S.nextInt();
         System.out.println("ingrese marca:");
@@ -139,102 +140,25 @@ public class Inventario {
         }
         
         
-        System.out.println("Agregar otro s/n:");
-        continuar=S.next();
-        
-        
-        
-            if("s".equals(continuar)){
-                     
-                
-        System.out.println("ingrese placa:");
-        Placa=S.nextInt();
-        System.out.println("ingrese marca:");
-        Marca=S.next();
-        System.out.println("ingrese color:");
-        Color=S.next();
-        System.out.println("ingresar cilindraje:");
-        Cilindraje=S.next();
-        System.out.println("ingresar modelo:");
-        Modelo =S.next();
-        System.out.println("ingresar combustible:");
-        Combustible=S.next();
-        System.out.println("ingresar cantidad de llantas:");
-        CantidadLlantas=S.nextInt();
-        System.out.println("ingresar cantidad de puertas:");
-        CantidadPuertas=S.nextInt();
-        System.out.println("ingresar precio:");
-        Precio=S.nextDouble();
-        if (id == 1){
-            System.out.println("ingresar turbo:");
-            Turbo=S.next();
-            System.out.println("ingresar seguridad:");
-            Seguridad=S.next();
-        
-            Deportivo nuevo = new Deportivo(Turbo,Seguridad,Placa,Marca,Color,Cilindraje,
-            Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
-        
-            listaDeportivo.add(nuevo);
-        }else{
-            if(id == 2){
-                System.out.println("ingrese tipon de rines:");
-                tipoRin = S.next();
-                System.out.println("ingrese tipo de luces:");
-                tipoLuces = S.next();
-                System.out.println("ingrese sonido: ");
-                sonido = S.next();
-                
-                Personalizado nuevoP = new Personalizado(tipoRin,tipoLuces,sonido,Placa,Marca,Color,Cilindraje,
-                Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
-                
-                listaPersonalizado.add(nuevoP);
-                
-            }else{
-            if(id==3){
-                System.out.println("ingrese tipo de llantas: ");
-                tipoLlanta = S.next();
-                System.out.println("ingrese capasidad: : ");
-                capacidad = S.next();
-                
-                Maquinaria nuevoM = new Maquinaria(capacidad,tipoLlanta,Placa,Marca,Color,Cilindraje,
-                Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
-                
-                listaMaquinaria.add(nuevoM);
-            }else{
-                if(id==4){
-                    System.out.println("ingrese es QP 1.si / 2.no");
-                    int tipo = S.nextInt();
-                    
-                    Estandar nuevoE = new Estandar(tipo,Placa,Marca,Color,Cilindraje,
-                    Modelo,Combustible,CantidadLlantas,CantidadPuertas,Precio);
-                    
-                    listaEstandar.add(nuevoE); 
-                }
-                
-            }
-           
-            
-            }
-        }
-         
-        
+       
             
           System.out.println("Agregar otro s/n:");
           continuar=S.next();
         
          }
-            
-            
         }
+            
+        }catch(Exception e){
+             System.out.println("Dato incorrecto");
+          
              
            
          
 
           
-    }catch(Exception e){
-             System.out.println("Dato incorrecto");
+    }
      }
-          }
+          
      /**
       * Funcion que sirve para modificar los atributos de cualquier carro
       * @param placaM variabe por la que se identifica el carro 
