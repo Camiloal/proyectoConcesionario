@@ -25,7 +25,9 @@ public class Cliente extends Persona {
     *   varibe que indica la contrasena del cliente 
     */
    private String clave;
-
+/**
+ * constructor vacio
+ */
     public Cliente() {
     }
 

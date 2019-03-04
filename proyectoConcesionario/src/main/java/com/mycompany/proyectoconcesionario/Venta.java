@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyectoconcesionario;
 
+import java.util.List;
+
 /**
  *
  * @author CamiloAlvarez
@@ -17,11 +19,10 @@ public class Venta {
           
     }
     
-    public void seleccionarCarro(int placa){
-        
-        Inventario inv = new Inventario();
-       
-       for(Carro seleccionD : inv.getListaDeportivo() ){
+    public Carro seleccionarCarro(int placa,List<Carro> listaCarro){
+        Inventario selecc = new Inventario();
+   
+        for(Carro seleccionD : listaCarro ){
            
            if(seleccionD.getPlaca()==placa){
                
@@ -29,30 +30,7 @@ public class Venta {
            }
            
        }
-         for(Carro seleccionE : inv.getListaEstandar()){
-           
-           if(seleccionE.getPlaca()==placa){
-               
-               seleccion = seleccionE;
-           }
-           
-       }
-           for(Carro seleccionM : inv.getListaMaquinaria()){
-           
-           if(seleccionM.getPlaca()==placa){
-               
-               seleccion = seleccionM;
-           }
-           
-       }
-             for(Carro seleccionP : inv.getListaPersonalizado()){
-           
-           if(seleccionP.getPlaca()==placa){
-               
-               seleccion = seleccionP;
-           }
-           
-       } 
+             return seleccion;
         
     }
 

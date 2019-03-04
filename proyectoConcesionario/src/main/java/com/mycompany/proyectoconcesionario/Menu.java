@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyectoconcesionario;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,6 +17,8 @@ import java.util.Scanner;
  */
 public class Menu {
 
+     private List<Carro> listaCarro = new ArrayList<>();
+      private List<Cliente> listaPersona = new ArrayList<>();
     public Menu() {
     }
     
@@ -36,6 +40,7 @@ public class Menu {
            */
           int opcion;
 
+           
      do{
          System.out.println("Menu Principal");
          System.out.println("1.Administrador");
@@ -80,7 +85,7 @@ public class Menu {
                                  System.out.println("5.Salir");
                                  System.out.println("ingrese opcion:");
                                  opcion = op.nextInt();
-                                uno.agregarCarro(opcion); 
+                                 listaCarro = uno.agregarCarro(opcion,listaCarro); 
                              }while(opcion<5);
                              
                              
@@ -92,13 +97,14 @@ public class Menu {
                              placaModificar = op.nextInt();
                              uno.modificarCarros(placaModificar);
                          case 3:
-                           uno.verCarros();
+                             
+                            uno.verCarros(listaCarro);
                             break;
                          case 4:
                              int placaEliminar;
                              System.out.println("Ingrese la placa del carro a eliminar: ");
                              placaEliminar = op.nextInt();
-                             uno.eliminarCarro(placaEliminar);
+                             uno.eliminarCarro(placaEliminar,listaCarro);
                             break;
                          case 5:
                                 do {
@@ -108,7 +114,7 @@ public class Menu {
                                  System.out.println("3.salir");
                                  System.out.println("ingrese opcion");
                                  opcion = op.nextInt();
-                                 gente.agregarPersona(opcion);
+                                 listaPersona = gente.agregarPersona(opcion,listaPersona);
                                 }while (opcion != 3);
                                 break;
                                 
@@ -128,17 +134,29 @@ public class Menu {
                             break;
                             
                          case 9:
-                             uno.carroMasyMenosCaro(opcion);
+                             uno.carroMasyMenosCaro(opcion,listaCarro);
                              
                              break;
                          case 10:
-                             uno.carroMasyMenosCaro(opcion);
+                             uno.carroMasyMenosCaro(opcion,listaCarro);
                              
                      }
                      
                  }while (opcion!=13);
              
                  break;
+                 
+             case 2:
+                 System.out.println("Que vas a hacer:");
+                 System.out.println("1.Comprar");
+                 System.out.println("2.Ver factura");
+                 opcion=op.nextInt();
+                 Factura nuevo = new Factura(); 
+                 if(opcion == 1){
+                  nuevo.agregarVenta(listaCarro,listaPersona);
+                 }else{
+                     
+                 }
          }
          
          

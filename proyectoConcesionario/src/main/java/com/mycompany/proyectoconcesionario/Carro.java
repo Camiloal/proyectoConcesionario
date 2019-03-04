@@ -48,7 +48,9 @@ public  abstract class Carro {
      */
     private double precio;
 
-    
+    /**
+     * constructor vacio 
+     */
     public Carro() {
     }
     
@@ -78,35 +80,60 @@ public  abstract class Carro {
         this.precio = precio;
     }
     
-   
+   /**
+    * trae  el dato de placa
+    * @return 
+    */
     public int getPlaca() {
         return placa;
     }
-
+    /**
+    * guarda el dato de placa
+    * @return 
+    */
     public void setPlaca(int placa) {
         this.placa = placa;
     }
-
+    /**
+    * trae el dato de marca
+    * @return 
+    */
     public String getMarca() {
         return marca;
     }
-
+     /**
+    * guarda el dato de marca
+    * @return 
+    */
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
+     /**
+    * trae el dato de color
+    * @return 
+    */
     public String getColor() {
         return color;
     }
-
+     /**
+    * guarda el dato de color
+    * @return 
+    */
     public void setColor(String color) {
         this.color = color;
     }
 
+     /**
+    * trae el dato de cilinfraje
+    * @return 
+    */
     public String getCilindraje() {
         return cilindraje;
     }
-
+    /**
+    * guarda el dato de cilinfraje
+    * @return 
+    */
     public void setCilindraje(String cilindraje) {
         this.cilindraje = cilindraje;
     }

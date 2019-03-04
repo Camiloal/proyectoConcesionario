@@ -23,6 +23,11 @@ public class Empleado extends Persona{
      *  variable que indica la eps a la que pertenece cada empleado
      */
     private String eps;
+/**
+ * constructor vacio
+ */
+    public Empleado() {
+    }
 
     /**
      * Constructor que inicializa las variables 

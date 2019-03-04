@@ -23,7 +23,7 @@ public class PersonalTotal {
     /**
      * lista creada para guardar los datos de la cliente
      */
-    private List<Cliente> listacCliente = new ArrayList<>();
+    private List<Cliente> listaCliente = new ArrayList<>();
     
    
     
@@ -36,7 +36,7 @@ public class PersonalTotal {
      * funcion que permite agregar nuevas personas 
      * @param id variable que sirve para identificar que tipo de persona agregar
      */    
-     public void agregarPersona (int id) {
+     public List<Cliente> agregarPersona (int id,List<Cliente> listaClient) {
          Double salario;
          String experienciaLaboral; 
          String eps;
@@ -73,7 +73,7 @@ public class PersonalTotal {
         Cliente nuevo = new Cliente(dineroDisponible,usuario,clave,Nombre,Apellido,Cedula,
         Direccion);
 
-        listacCliente.add(nuevo);
+        listaCliente.add(nuevo);
         }else{
             if(id == 2){
                 System.out.println("ingrese salario:");
@@ -100,6 +100,7 @@ public class PersonalTotal {
         }catch(Exception e){
              System.out.println("Dato incorrecto");
         }
+         return listaCliente;
         }       
     
      
@@ -111,7 +112,7 @@ public class PersonalTotal {
       */
        public void modificarPersona(int cedulaM){ 
        
-           for(Cliente listaclientes : listacCliente){
+           for(Cliente listaclientes : listaCliente){
             if (listaclientes.getCedula()== cedulaM){
 
                 System.out.println("ingresar dinero disponible:");
@@ -176,7 +177,7 @@ public class PersonalTotal {
         */
        public void mostrarPersonas (){
        try{
-         for(Cliente lista : listacCliente){
+         for(Cliente lista : listaCliente){
              
          System.out.println("Nombre: "+lista.getNombre()+"  Apellido: "+lista.getApellido()+"  Cedula: "+lista.getCedula()+"  Direccion:  "+lista.getDireccion()
          +"  DineroDisponible: "+lista.getDineroDisponible()+"  Usuario: "+lista.getUsuario()+"  Clave: "+lista.getClave()+"  Tipo: "+" Cliente");
@@ -197,12 +198,14 @@ public class PersonalTotal {
        
        }
        
+ 
+       
         public void eliminarPersona(int cedula){
         try{
-           for (Cliente cliente : listacCliente) {
+           for (Cliente cliente : listaCliente) {
                 
                 if(cliente.getCedula()== cedula){
-                    listacCliente.remove(cliente);
+                    listaCliente.remove(cliente);
                     System.err.println("Cliente Eliminado");
                 }else{
                                     break;
@@ -233,11 +236,11 @@ public class PersonalTotal {
     }
 
     public List<Cliente> getListacCliente() {
-        return listacCliente;
+        return listaCliente;
     }
 
     public void setListacCliente(List<Cliente> listacCliente) {
-        this.listacCliente = listacCliente;
+        this.listaCliente = listacCliente;
     }
 
     public Scanner getS() {
